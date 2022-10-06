@@ -59,12 +59,19 @@ func configBrokerCluster() error {
 	configProp.Set("configurationStoreServers", config.ZkAddress)
 	configProp.Set("clusterName", config.ClusterName)
 	configProp.Set("allowAutoTopicCreationType", "partitioned")
+	configBrokerClusterCommon(configProp)
 	configBrokerCommon(configProp)
 	return configProp.Write(path.PulsarConfig)
 }
 
 func configBrokerWithFunctionCommon(prop *gutil.ConfigProperties) {
 	configBrokerCommon(prop)
+}
+
+func configBrokerClusterCommon(prop *gutil.ConfigProperties) {
+	prop.SetInt("managedLedgerDefaultEnsembleSize", config.PulsarManagedLedgerDefaultEnsembleSize)
+	prop.SetInt("managedLedgerDefaultWriteQuorum", config.PulsarManagedLedgerDefaultWriteQuorum)
+	prop.SetInt("managedLedgerDefaultAckQuorum", config.PulsarManagedLedgerDefaultAckQuorum)
 }
 
 func configBrokerCommon(prop *gutil.ConfigProperties) {

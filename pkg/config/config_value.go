@@ -22,6 +22,9 @@ var (
 	PulsarBrokerDeleteInactivePartitionedTopicMetadataEnabled bool
 	PulsarBrokerEntryMetadataInterceptors                     string
 	PulsarBrokerDeleteInactiveTopicsEnabled                   bool
+	PulsarManagedLedgerDefaultEnsembleSize                    int
+	PulsarManagedLedgerDefaultWriteQuorum                     int
+	PulsarManagedLedgerDefaultAckQuorum                       int
 	PulsarTlsAllowInsecureConnection                          bool
 	PulsarExposingBrokerEntryMetadataToClientEnabled          bool
 	PulsarFunctionBrokerServerHost                            string
@@ -51,6 +54,9 @@ func init() {
 	PulsarBrokerDeleteInactivePartitionedTopicMetadataEnabled = gutil.GetEnvBool("PULSAR_BROKER_DELETE_INACTIVE_PARTITIONED_TOPIC_METADATA_ENABLED", false)
 	PulsarBrokerEntryMetadataInterceptors = gutil.GetEnvStr("PULSAR_BROKER_ENTRY_METADATA_INTERCEPTORS", "")
 	PulsarBrokerDeleteInactiveTopicsEnabled = gutil.GetEnvBool("PULSAR_BROKER_DELETE_INACTIVE_TOPICS_ENABLED", false)
+	PulsarManagedLedgerDefaultEnsembleSize = gutil.GetEnvInt("PULSAR_MANAGED_LEDGER_DEFAULT_ENSEMBLE_SIZE", 2)
+	PulsarManagedLedgerDefaultWriteQuorum = gutil.GetEnvInt("PULSAR_MANAGED_LEDGER_DEFAULT_WRITE_QUORUM", 2)
+	PulsarManagedLedgerDefaultAckQuorum = gutil.GetEnvInt("PULSAR_MANAGED_LEDGER_DEFAULT_ACK_QUORUM", 2)
 	PulsarTlsAllowInsecureConnection = gutil.GetEnvBool("PULSAR_TLS_ALLOW_INSECURE_CONNECTION", false)
 	PulsarExposingBrokerEntryMetadataToClientEnabled = gutil.GetEnvBool("PULSAR_EXPOSING_BROKER_ENTRY_METADATA_TO_CLIENT_ENABLED", false)
 	PulsarFunctionBrokerServerHost = gutil.GetEnvStr("", "localhost")
