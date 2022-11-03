@@ -8,4 +8,3 @@ else
     bash -x $DIR/start-daemon.sh
     tail -f /dev/null
 fi
-
