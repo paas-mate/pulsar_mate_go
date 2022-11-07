@@ -7,17 +7,22 @@ import (
 
 // pulsar
 var (
-	PulsarHome                     = os.Getenv("PULSAR_HOME")
-	PulsarConfigDir                = filepath.FromSlash(PulsarHome + "/conf")
-	PulsarConfig                   = filepath.FromSlash(PulsarConfigDir + "/broker.conf")
+	PulsarHome                   = os.Getenv("PULSAR_HOME")
+	PulsarConfigDir              = filepath.FromSlash(PulsarHome + "/conf")
+	PulsarConfig                 = filepath.FromSlash(PulsarConfigDir + "/broker.conf")
+	PulsarStandaloneConfig       = filepath.FromSlash(PulsarConfigDir + "/standalone.conf")
+	PulsarProxyConfig            = filepath.FromSlash(PulsarConfigDir + "/proxy.conf")
+	PulsarFunctionConfig         = filepath.FromSlash(PulsarConfigDir + "/functions_worker.yml")
+	PulsarFunctionOriginalConfig = filepath.FromSlash(PulsarConfigDir + "/functions_worker_original.yml")
+	PulsarClientConfig           = filepath.FromSlash(PulsarConfigDir + "/client.conf")
+)
+
+// pulsar original config file
+var (
+	PulsarOriginalConfigDir        = filepath.FromSlash("/opt/sh/pulsar/conf")
 	PulsarOriginalConfig           = filepath.FromSlash(PulsarConfigDir + "/broker_original.conf")
-	PulsarStandaloneConfig         = filepath.FromSlash(PulsarConfigDir + "/standalone.conf")
 	PulsarStandaloneOriginalConfig = filepath.FromSlash(PulsarConfigDir + "/standalone_original.conf")
-	PulsarProxyConfig              = filepath.FromSlash(PulsarConfigDir + "/proxy.conf")
 	PulsarProxyOriginalConfig      = filepath.FromSlash(PulsarConfigDir + "/standalone_original.conf")
-	PulsarFunctionConfig           = filepath.FromSlash(PulsarConfigDir + "/functions_worker.yml")
-	PulsarFunctionOriginalConfig   = filepath.FromSlash(PulsarConfigDir + "/functions_worker_original.yml")
-	PulsarClientConfig             = filepath.FromSlash(PulsarConfigDir + "/client.conf")
 	PulsarClientOriginalConfig     = filepath.FromSlash(PulsarConfigDir + "/client_original.conf")
 )
 
