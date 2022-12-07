@@ -6,7 +6,7 @@ require (
 	github.com/apache/pulsar-client-go v0.9.0
 	github.com/paas-mate/gutil v0.0.1
 	github.com/stretchr/testify v1.8.1
-	go.uber.org/zap v1.23.0
+	go.uber.org/zap v1.24.0
 )
 
 require (
